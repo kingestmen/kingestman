@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    margin: 0px;
+}
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}  
+img.displaySlide{
+    display: block !important; 
+}
+#container{
+    width: 100%;
+}
+#slideShow{
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+}
+.slide img{
+    margin-top: 35px;
+    display: none;
+    width: 100%;
+}
+.dot{
+    position: relative;
+    top: -50px;
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.4s ease;
+    margin: 0 5px;
+}
+.dot:hover, .active{
+    background-color: #7c7c7c;
+}
+#head{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    border-bottom: 1px solid grey;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+.head-block{
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+    margin-left: 1px;
+}
+
+.block8{
+    margin-right: 60px;
+}
+.head-block::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(0, 64, 255);
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 150ms ease;
+}
+.head-block::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 64, 255, 0.4);
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 150ms ease;
+}
+.head-block:hover::before{
+    height: 6px;
+}
+.head-block:hover::after{
+    height: 100%;
+}
