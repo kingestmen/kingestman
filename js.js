@@ -26,9 +26,16 @@ function showSlide(index){
     slide[slideIndex].classList.add('displaySlide');
 }
 
-
 function currentSlide(n) {  
     clearInterval(intervalId);
     showSlide(slideIndex = n);
 }
 
+function showSlidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'block';
+}
+function hideSlidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
+}
