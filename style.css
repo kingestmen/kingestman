@@ -39,7 +39,7 @@ img.displaySlide{
 .dot:hover, .active{
     background-color: #7c7c7c;
 }
-#head{
+.main{
     width: 100%;
     text-align: right;
     display: flex;
@@ -60,7 +60,7 @@ img.displaySlide{
     margin-left: 1px;
 }
 
-.block8{
+.main a:last-child{
     margin-right: 60px;
 }
 .head-block::before{
@@ -90,4 +90,96 @@ img.displaySlide{
 }
 .head-block:hover::after{
     height: 100%;
+}
+.main a:first-child{
+    margin-right: auto;
+    margin-left: 5%;
+    padding: 15px 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    position: relative;
+    
+}
+.main a:first-child::after{
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: conic-gradient(from var(--angle), transparent 50%, blue) !important;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 5px;
+    animation: 3s spin linear infinite;
+} 
+.main a:first-child::before{
+    display: none;
+}
+@property --angle{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+.main .block9{
+    margin-right: 73px;
+}
+.main a:last-child{
+    margin-right: 5%;
+}
+.sidebar-block{
+    display: block;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    width: 100%;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.21);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+}
+.close{
+    display: block;
+    margin: 20px;
+    width: 50%;
+}
+@media(max-width: 1187px){
+    .hideOnMobile{
+        display: none;
+    }
+}
+@media(min-width: 1187px){
+    .hideOnPC{
+        display: none;
+    }
+}
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
 }
